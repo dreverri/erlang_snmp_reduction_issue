@@ -15,4 +15,6 @@ Erlang throws the following error:
 
 To reproduce:
 
-Run "./snmp_reduction_issue.escript"
+git clone git://github.com/dreverri/erlang_snmp_reduction_issue.git
+cd erlang_snmp_reduction_issue
+./snmp_reduction_issue.escript

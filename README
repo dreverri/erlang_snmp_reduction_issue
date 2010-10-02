@@ -1,0 +1,18 @@
+Issue:
+
+Erlang does not truncate reductions when they have exceeded 4294967295. The 
+erlNodeReductions OID in OTP-MIB is set as Counter32. If the value is not 
+truncated SNMP walks to this object fail:
+Error in packet.
+Reason: (genError) A general failure occured
+Failed object: OTP-MIB::erlNodeReductions.1
+
+
+Erlang throws the following error:
+=ERROR REPORT==== 1-Oct-2010::11:34:53 ===
+** User error: Got 4297800680 from {otp_mib,erl_node_table,[]}. Using wrongValue
+
+
+To reproduce:
+
+Run "./snmp_reduction_issue.escript"
